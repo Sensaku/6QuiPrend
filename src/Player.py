@@ -6,6 +6,7 @@ class Player:
     def __init__(self, name: str):
         self.hand = []
         self.name = name
+        self.score = 0
 
     def get_Hand(self):
         return self.hand
@@ -26,6 +27,7 @@ class Player:
 
     def choose_card(self):
         carte = min(self.hand, key=lambda x: x.value)
+        self.hand.remove(carte)
         return PlayerAction(self, carte)
 
 

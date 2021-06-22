@@ -42,8 +42,8 @@ class Engine:
         # Redonner une carte dans le tas de carte
 
     def apply_turn(self):
-        self.board.plie.sort(key=lambda x: x.value)
-        print(self.board.plie)
+        self.board.plie.sort(key=lambda x: x.carte.value)
+        self.board.put_in_good_line()
 
     def run(self):
         self.initilisation()
@@ -53,3 +53,8 @@ class Engine:
 
         self.board.init_board(to_board)
         print(self.board)
+        print()
+
+        self.ask_player_to_choose()
+        self.apply_turn()
+        print(f"Tour de jeu:\n{self.board}")
