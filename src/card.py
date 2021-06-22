@@ -10,5 +10,8 @@ class Card:
     def get_score(self):
         return self.score
 
+    def to_string(self):
+        return f"Valeur:{self.value}\tScore:{self.score}\n"
+
     def __repr__(self):
         return f"valeur: {self.value}\tScore: {self.score}"
