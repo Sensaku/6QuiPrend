@@ -1,5 +1,5 @@
 from card import Card
-
+from Action import *
 
 class Player:
 
@@ -23,6 +23,10 @@ class Player:
             self.hand.append(card)
         else:
             raise NotImplementedError("Mauvaise instance de carte")
+
+    def choose_card(self):
+        carte = min(self.hand, key=lambda x: x.value)
+        return PlayerAction(self, carte)
 
 
 
